@@ -34,8 +34,8 @@ function displayMovies(showing) {
   var htmlForMovies = "";
 
   showing.films.forEach(function(movie) {
-    htmlForMovies += "<div class='col-md-4' id=" + movie.id + ">" +
-    "<div class='card' style='width: 18rem;'> <img class='card-img-top' src=" + movie.image + " alt=''> <div class='card-body'> <h5 class='card-title'>" + movie.name + "</h5> <p class='card-text'>Some quick example text to build on the card title and make up the bulk of the card's content.</p> <a href='#' class='btn btn-primary'>Link</a></div></div>"+ "</div>";
+    htmlForMovies += "<div class='col-md-4' " + movie.id + ">" +
+    "<div class='card' style='width: 18rem;'> <img id=" + movie.id + " class='card-img-top' src=" + movie.image + " alt=''> <div class='card-body'> <h5 class='card-title'>" + movie.name + "</h5> </div></div></div>";
   });
   movieChoices.html(htmlForMovies);
 }
@@ -52,6 +52,19 @@ function checkMovieCost(ticket) {
     ticket.cost += 2;
   }
 }
+
+function showTicket(ticket, time, age) {
+  $("#ticket-text").text('');
+  $(".ticket").show();
+  $("#ticket-title").text(ticket.film.name);
+  if(ticket.film.premier){
+    $("#ticket-text").append("premier" + "<br>");
+  }
+  $("#ticket-text").append(" For age: " + age + "<br>");
+  $("#ticket-text").append(" Cost: " + "$" + ticket.cost);
+  $("#ticket-footer").text("Showtime: " + time);
+};
+
 //-------------User Interface------------------
 var nowShowing = new Movies;
 
@@ -69,14 +82,16 @@ function makeMovieList() {
   });
 }
 
-
 $(document).ready(function(){
   var currentTicket = new Ticket;
 
   makeMovieList();
   displayMovies(nowShowing);
 
-  $("#movieChoices").on( "click", "li", function() {
+  $("#movieChoices").on( "click", "img", function() {
+    console.log("clicked img");
+    $(".card img").removeClass("highlight");
+    $(this).addClass("highlight");
     var chosenMovieID = this.id;
     var film = nowShowing.films[chosenMovieID - 1];
     currentTicket.film = film;
@@ -91,8 +106,9 @@ $(document).ready(function(){
     currentTicket.time = time;
     console.log(currentTicket);
     checkMovieCost(currentTicket);
-    $(".output h2").text(currentTicket.cost + '$$$');
+    $(".output").text(currentTicket.cost + '$$$');
     console.log(currentTicket.cost);
+    showTicket(currentTicket, time, age);
+    currentTicket.cost = 12;
   });
-
 });

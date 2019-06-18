@@ -1,67 +1,67 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <link rel="stylesheet" href="css/bootstrap.css">
-  <link rel="stylesheet" href="css/styles.css">
-  <script src="js/jquery-3.4.1.js"></script>
-  <script src="js/scripts.js"></script>
-  <title>Movies Playing</title>
-</head>
-<body>
-  <div class="container">
-    <div class="jumbotron">
-      <h2>Please Choose a Movie!</h2>
-    </div>
-
-    <div id="movieChoices">
-      <div class="row">
-
+  <head>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/jquery-3.4.1.js"></script>
+    <script src="js/scripts.js"></script>
+    <title>Movies Playing</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="jumbotron">
+        <h1>Bomb.com Movies</h1>
       </div>
-    </div>
 
-    <!-- <div class="row">
-      <div class="col-md-4">
+      <h2>Please Choose a Movie!</h2>
+      <br>
+      <div id="movieChoices">
+        <div class="row">
 
-        <div class="card" style="width: 18rem;">
-          <img class="card-img-top" src="img/endgame.jpg" alt="">
-          <div class="card-body">
-            <h5 class="card-title">currentTicket.film.name</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="#" class="btn btn-primary">Link</a>
-          </div>
+        </div>
+      </div>
+
+      <form id='input'>
+        <h2>Buy a ticket below</h2>
+        <div class="form-group">
+          <label for="age">Enter your age</label>
+          <input id="age" class="form-control" type="text" name="" value="">
         </div>
 
-      </div> -->
+        <div class="form-group">
+          <label for="time">Select a time</label>
+          <select id="time" class="form-control">
+            <option value="1000">10:00am</option>
+            <option value="1200">12:00pm</option>
+            <option value="1400">2:00pm</option>
+            <option value="1600">4:00pm</option>
+            <option value="1800">6:00pm</option>
+            <option value="2000">8:00pm</option>
+            <option value="2200">10:00pm</option>
+            <option value="2400">12:00am</option>
+          </select>
+        </div>
+        <button class="btn btn-primary" type="submit" name="button">Submit</button>
+      </form>
 
-    </div>
-    <form id='input'>
-      <h2>Buy a ticket below</h2>
-      <div class="form-group">
-        <label for="age">Enter your age</label>
-        <input id="age" class="form-control" type="text" name="" value="">
+      <br>
+      <div class="ticket text-center">
+        <h2>Print your ticket below!</h2>
+        <br>
+        <div class="card bg-warning w-50">
+          <div class="card-header text-muted">
+            <h3>Ticket</h3>
+          </div>
+          <div class="card-body">
+            <h5 id="ticket-title" class="card-title"></h5>
+            <p id="ticket-text"></p>
+          </div>
+          <div class="card-footer text-muted">
+            <span id="ticket-footer"></span>
+          </div>
+        </div>
       </div>
-
-      <div class="form-group">
-        <label for="time">Select a time</label>
-        <select id="time" class="form-control">
-          <option value="1000">10:00am</option>
-          <option value="1200">12:00pm</option>
-          <option value="1400">2:00pm</option>
-          <option value="1600">4:00pm</option>
-          <option value="1800">6:00pm</option>
-          <option value="2000">8:00pm</option>
-          <option value="2200">10:00pm</option>
-          <option value="2400">12:00am</option>
-        </select>
-      </div>
-      <button type="submit" name="button">Input your age</button>
-
-    </form>
-    <br>
-
-    <div class="output">
-      <h2></h2>
+      
     </div>
-  </div>
-</body>
+  </body>
 </html>

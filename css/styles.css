@@ -1,0 +1,26 @@
+.card {
+  margin: 0 auto;
+  float: none;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.card-img-top {
+  height: 450px;
+}
+
+.highlight {
+    border: red thick solid;
+}
+
+.jumbotron h1 {
+    text-align: center;
+    text-decoration: underline;
+    font-style: oblique;
+    font-family: fantasy;
+    font-size: 75px;
+
+}
+ .ticket {
+   display: none;
+ }
