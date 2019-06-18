@@ -43,7 +43,6 @@ function displayMovies(showing) {
 function checkMovieCost(ticket) {
   if(ticket.age >= 55) {
     ticket.cost -= 2;
-
   }
   if(ticket.time < 1600) {
     ticket.cost -= 2;
@@ -58,7 +57,7 @@ function showTicket(ticket, time, age) {
   $(".ticket").show();
   $("#ticket-title").text(ticket.film.name);
   if(ticket.film.premier){
-    $("#ticket-text").append("premier" + "<br>");
+    $("#ticket-text").append("Premier Showing" + "<br>");
   }
   $("#ticket-text").append(" For age: " + age + "<br>");
   $("#ticket-text").append(" Cost: " + "$" + ticket.cost);
@@ -89,7 +88,6 @@ $(document).ready(function(){
   displayMovies(nowShowing);
 
   $("#movieChoices").on( "click", "img", function() {
-    console.log("clicked img");
     $(".card img").removeClass("highlight");
     $(this).addClass("highlight");
     var chosenMovieID = this.id;
@@ -104,10 +102,8 @@ $(document).ready(function(){
     var time = $("#time").val();
     currentTicket.age = age;
     currentTicket.time = time;
-    console.log(currentTicket);
     checkMovieCost(currentTicket);
     $(".output").text(currentTicket.cost + '$$$');
-    console.log(currentTicket.cost);
     showTicket(currentTicket, time, age);
     currentTicket.cost = 12;
   });
