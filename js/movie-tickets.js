@@ -59,16 +59,3 @@ function showTicket(ticket, time, age) {
   $("#ticket-text").append(" Cost: " + "$" + ticket.cost);
   $("#ticket-footer").text("Showtime: " + time);
 };
-function makeMovieList() {
-  var ourFilms =[["Toy Story 4", true, "img/toystory4.jpg"],
-  ["Avenger's: Endgame", false, "img/endgame.jpg"],
-  ["Child's Play", true, "img/childsplay.jpg"],
-  ["Alladin", true, "img/alladin.jpg"],
-  ["Godzilla", true, "img/godzilla.jpg"],
-  ["Dark Phoenix", true, "img/darkphoenix.jpg"]];
-
-  ourFilms.forEach(function(movie) {
-    var newMovie = new Film(movie[0], movie[1], movie[2]);
-    nowShowing.addfilm(newMovie);
-  });
-}
