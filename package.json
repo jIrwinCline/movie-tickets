@@ -1,0 +1,29 @@
+{
+  "name": "movie-tickets",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jIrwinCline/movie-tickets.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jIrwinCline/movie-tickets/issues"
+  },
+  "homepage": "https://github.com/jIrwinCline/movie-tickets#readme",
+  "dependencies": {
+    "bootstrap": "^4.3.1",
+    "jquery": "^3.4.1",
+    "popper.js": "^1.15.0",
+    "webpack": "^4.19.1"
+  },
+  "devDependencies": {
+    "webpack-cli": "^2.0.9"
+  }
+}
